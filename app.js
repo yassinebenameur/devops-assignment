@@ -7,15 +7,13 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 const {
-    MONGO_USERNAME,
-    MONGO_PASSWORD,
     MONGO_HOSTNAME,
     MONGO_PORT,
     MONGO_DB
 } = process.env;
 
 const mongoose = require('mongoose');
-const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}`;
+const url = `mongodb://${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
 
 // connect to database
