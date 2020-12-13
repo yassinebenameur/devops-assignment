@@ -15,14 +15,11 @@ services:
     ports:
       - "80:8080"
     env_file: .env
-    depends_on:
-      - mongo
     links:
       - mongo
     networks:
       my_network:
-
-
+    command: ./wait-for-it.sh mongo:27017 -- node app.js
   mongo:
     image: mongo:4.1.8-xenial
     ports: 
