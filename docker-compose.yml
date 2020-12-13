@@ -13,7 +13,7 @@ services:
 
     #      endpoint_mode: dnsrr
     ports:
-      - "80:8080"
+      - "80:27017"
     env_file: .env
     networks:
       my_network:
